@@ -1,2 +1,2 @@
 # DevConnector
-Social Network for Developers using: Node.js, Express, React, Hooks, Redux &amp; MongoDB
+Social Network for Web Developers using: Node.js, Express, React, Hooks, Redux &amp; MongoDB
