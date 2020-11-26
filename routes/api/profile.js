@@ -60,7 +60,6 @@ router.post(
       instagram,
       linkedin,
       facebook,
-      ...rest
     } = req.body;
 
     // Build profile object
