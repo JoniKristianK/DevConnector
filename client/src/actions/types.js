@@ -14,3 +14,4 @@ export const LOGOUT = 'LOGOUT';
 // Profile
 export const GET_RPOFILE = 'GET_RPOFILE';
 export const PROFILE_ERROR = 'PROFILE_ERROR';
+export const CLEAR_RPOFILE = 'CLEAR_RPOFILE';
