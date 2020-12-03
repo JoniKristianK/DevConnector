@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Link, Redirect } from 'react-router-dom';
@@ -27,12 +27,12 @@ const Login = ({ login, isAuthenticated, setAlert }) => {
   }
 
   return (
-    <>
+    <Fragment>
       <h1 className='large text-primary'>Sign in</h1>
       <p className='lead'>
         <i className='fas fa-user'></i> Sign In Your Account
       </p>
-      <form className='form' onSubmit={onSubmit}>
+      <form className='form' onSubmit={(e) => onSubmit(e)}>
         <div className='form-group'>
           <input
             type='email'
@@ -58,7 +58,7 @@ const Login = ({ login, isAuthenticated, setAlert }) => {
       <p className='my-1'>
         Don't have an accoutn <Link to='/register'>Sign Up</Link>
       </p>
-    </>
+    </Fragment>
   );
 };
 

@@ -139,8 +139,8 @@ router.get('/user/:user_id', async (req, res) => {
 // access   Public
 router.delete('/', auth, async (req, res) => {
   try {
-    // @todo - remo users posts
-
+    // Remove users posts
+    await Post.deleteMany({ user: req.user.id });
     // Remove Profile
     await Profile.findOneAndRemove({ user: req.user.id });
     // Remove user
