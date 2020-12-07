@@ -1,10 +1,11 @@
 import {
   GET_PROFILE,
-  GET_PROFILES,
-  GET_REPOS,
-  UPDATE_PROFILE,
   PROFILE_ERROR,
   CLEAR_PROFILE,
+  UPDATE_PROFILE,
+  GET_PROFILES,
+  GET_REPOS,
+  NO_REPOS,
 } from '../actions/types';
 
 const initialState = {
@@ -14,8 +15,7 @@ const initialState = {
   loading: true,
   error: {},
 };
-
-//eslint-disable-next-line
+// eslint-disable-next-line
 export default function (state = initialState, action) {
   const { type, payload } = action;
 
@@ -38,13 +38,13 @@ export default function (state = initialState, action) {
         ...state,
         error: payload,
         loading: false,
+        profile: null,
       };
     case CLEAR_PROFILE:
       return {
         ...state,
         profile: null,
         repos: [],
-        loading: false,
       };
     case GET_REPOS:
       return {
@@ -52,7 +52,11 @@ export default function (state = initialState, action) {
         repos: payload,
         loading: false,
       };
-
+    case NO_REPOS:
+      return {
+        ...state,
+        repos: [],
+      };
     default:
       return state;
   }
