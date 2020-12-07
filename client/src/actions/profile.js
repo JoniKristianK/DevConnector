@@ -22,7 +22,7 @@ export const getCurrentProfile = () => async (dispatch) => {
       payload: res.data,
     });
   } catch (err) {
-    // dispatch({ type: CLEAR_PROFILE });
+    dispatch({ type: CLEAR_PROFILE });
 
     dispatch({
       type: PROFILE_ERROR,
